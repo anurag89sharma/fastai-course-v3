@@ -14,7 +14,7 @@ class crappifier(object):
         img = img.resize(targ_sz, resample=PIL.Image.BILINEAR).convert('RGB')
         w,h = img.size
         q = random.randint(10,70)
-        shape = [random.randint(0,w//2),random.randint(0,h//2), random.randint(0,w//2), random.randint(0,h//2)]
-        ImageDraw.Draw(img).line(shape, width=random.randint(2, 5))
+        shape = [random.randint(0,w//2),random.randint(0,h//2), random.randint(0,w//2)-10, random.randint(0,h//2)-10]
+        ImageDraw.Draw(img).line(shape, width=random.randint(2, 4))
         #ImageDraw.Draw(img).text((random.randint(0,w//2),random.randint(0,h//2)), str(q), fill=(255,255,255))
         img.save(dest, quality=q)
